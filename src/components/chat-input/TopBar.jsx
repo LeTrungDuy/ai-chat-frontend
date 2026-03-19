@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Cross2Icon } from '@radix-ui/react-icons';
-import geminiIcon from '../../assets/gemini-icon.svg';
+import geminiIcon from '@/assets/gemini-icon.svg';
 
 const TopBar = () => {
   const [isVisible, setIsVisible] = useState(true);

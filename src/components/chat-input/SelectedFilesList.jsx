@@ -1,5 +1,5 @@
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { formatFileSize, getFileKey } from '../../utils/tools';
+import { formatFileSize, getFileKey } from '@/utils/tools';
 
 const SelectedFilesList = ({ files, onRemoveFile }) => {
   if (!files.length) return null;

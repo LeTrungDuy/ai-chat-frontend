@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useChat } from '../hooks/useChat';
+import { useChat } from '@/hooks/useChat';
 import ChatHeader from './ChatHeader';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';

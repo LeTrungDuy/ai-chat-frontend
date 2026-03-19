@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { getFileKey } from '../../utils/tools';
+import { getFileKey } from '@/utils/tools';
 import AttachedFileTile from './AttachedFileTile';
 
 const ListAttachedFile = ({ files, onRemoveFile }) => {

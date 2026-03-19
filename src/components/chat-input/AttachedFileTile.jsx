@@ -1,7 +1,7 @@
 import { CrossCircledIcon, FileIcon, ImageIcon } from '@radix-ui/react-icons';
-import pdfIcon from '../../assets/pdf-icon.svg';
-import txtIcon from '../../assets/txt-icon.svg';
-import wordIcon from '../../assets/word-icon.svg';
+import pdfIcon from '@/assets/pdf-icon.svg';
+import txtIcon from '@/assets/txt-icon.svg';
+import wordIcon from '@/assets/word-icon.svg';
 
 const AttachedFileTile = ({ file, imagePreview, onRemoveFile }) => {
   const extension = file.name.split('.').pop()?.toLowerCase() || '';

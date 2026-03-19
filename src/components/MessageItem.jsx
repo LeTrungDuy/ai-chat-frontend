@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { CheckIcon, CopyIcon } from '@radix-ui/react-icons';
 import MarkdownIt from 'markdown-it';
-import { formatFileSize } from '../utils/tools';
+import { formatFileSize } from '@/utils/tools';
 
 const md = new MarkdownIt({
   breaks: true,

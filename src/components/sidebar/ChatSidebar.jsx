@@ -15,7 +15,7 @@ import {
   StarFilledIcon,
   VideoIcon,
 } from '@radix-ui/react-icons';
-import favicon from '../../favicon.svg';
+import favicon from '@/favicon.svg';
 import RecentHistoryPanel from './RecentHistoryPanel';
 import SidebarRailButton from './SidebarRailButton';
 

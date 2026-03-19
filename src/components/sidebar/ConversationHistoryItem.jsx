@@ -1,5 +1,5 @@
 import { TrashIcon } from '@radix-ui/react-icons';
-import { formatDateTime } from '../../utils/tools';
+import { formatDateTime } from '@/utils/tools';
 
 const ConversationHistoryItem = ({
   conversation,

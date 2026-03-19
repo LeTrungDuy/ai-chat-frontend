@@ -4,8 +4,8 @@ import ListAttachedFile from './chat-input/ListAttachedFile';
 import PromptTextarea from './chat-input/PromptTextarea';
 import UploadButton from './chat-input/UploadButton';
 import GenerateButton from './chat-input/GenerateButton';
-import { formatFileSize, getFileKey } from '../utils/tools';
-import { MAX_UPLOAD_FILE_SIZE_BYTES, MAX_UPLOAD_FILE_SIZE_MB } from '../utils/constants';
+import { formatFileSize, getFileKey } from '@/utils/tools';
+import { MAX_UPLOAD_FILE_SIZE_BYTES, MAX_UPLOAD_FILE_SIZE_MB } from '@/utils/constants';
 
 const ChatInput = ({ onSendMessage, disabled, hasMessages = false }) => {
   const [input, setInput] = useState('');

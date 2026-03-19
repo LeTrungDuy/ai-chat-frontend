@@ -1,4 +1,4 @@
-import templateIcon from '../assets/template-icon.svg';
+import templateIcon from '@/assets/template-icon.svg';
 
 const ChatHeader = ({ onSignUpClick }) => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Cross2Icon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
-import googleIcon from '../../assets/google-icon.svg';
+import googleIcon from '@/assets/google-icon.svg';
 
 const SignInModal = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
