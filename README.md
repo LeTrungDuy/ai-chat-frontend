@@ -11,29 +11,73 @@ A production-ready chatbot web application built with ReactJS, TailwindCSS, and 
 - 📋 Copy message button for AI responses
 - ✨ Markdown rendering for AI responses
 - ⏳ Loading indicators and error handling
+- 📎 File attachment UI (image preview + file type icons)
+- 🔐 Sign In / Sign Up modals (UI)
+- 💎 Pricing modal with Plus and Max plans (UI)
 - 🎨 Clean, modern UI with Tailwind CSS
 - 🏗️ Clean architecture with modular components
+
+## Feature Status
+
+- ✅ Chat messaging flow (send/receive)
+- ✅ Conversation history in localStorage
+- ✅ Markdown rendering + copy response action
+- ✅ Attachment display in input/message UI
+- ✅ Sign In / Sign Up / Pricing modal UI
+- 🚧 Google authentication integration: Coming soon
+- 🚧 Email authentication integration: Coming soon
+- 🚧 Upgrade checkout / payment integration: Coming soon
 
 ## Project Structure
 
 ```
 src/
+├── assets/
+│   ├── gemini-icon.svg
+│   ├── google-icon.svg
+│   ├── pdf-icon.svg
+│   ├── template-icon.svg
+│   ├── txt-icon.svg
+│   └── word-icon.svg
 ├── components/
-│   ├── ChatContainer.jsx      # Main container component
-│   ├── ChatHeader.jsx         # Header with title and new chat button
-│   ├── ChatInput.jsx          # Input textarea and send button
-│   ├── MessageList.jsx        # Message list container
+│   ├── ChatContainer.jsx      # Main chat page container
+│   ├── ChatHeader.jsx         # Header with Sign Up action
+│   ├── ChatInput.jsx          # Input area and send flow
 │   ├── MessageItem.jsx        # Individual message bubble
-│   └── TypingIndicator.jsx    # Loading state indicator
+│   ├── MessageList.jsx        # Message list + typing state
+│   ├── TypingIndicator.jsx    # Typing/loading indicator
+│   ├── chat/
+│   │   ├── ChatConversationActions.jsx
+│   │   └── MessageListEmptyState.jsx
+│   ├── chat-input/
+│   │   ├── AttachedFileTile.jsx
+│   │   ├── GenerateButton.jsx
+│   │   ├── ListAttachedFile.jsx
+│   │   ├── PromptTextarea.jsx
+│   │   ├── SelectedFilesList.jsx
+│   │   ├── TopBar.jsx
+│   │   └── UploadButton.jsx
+│   ├── modals/
+│   │   ├── PricingModal.jsx
+│   │   ├── SignInModal.jsx
+│   │   └── SignUpModal.jsx
+│   └── sidebar/
+│       ├── ChatSidebar.jsx
+│       ├── ConversationHistoryItem.jsx
+│       ├── HistorySearchInput.jsx
+│       ├── RecentHistoryPanel.jsx
+│       └── SidebarRailButton.jsx
 ├── hooks/
-│   └── useChat.js             # Custom hook for chat state management
+│   └── useChat.js             # Chat state management
 ├── services/
-│   └── chatService.js         # API service for chat endpoints
+│   └── chatService.js         # API communication layer
 ├── utils/
-│   └── constants.js           # Constants and configuration
-├── App.jsx                    # Main App component
-├── main.jsx                   # React entry point
-└── index.css                  # Global styles with Tailwind
+│   ├── constants.js           # Shared constants
+│   └── tools.js               # Reusable format/helper utilities
+├── App.jsx                    # App root component
+├── favicon.svg                # App favicon
+├── index.css                  # Global Tailwind styles
+└── main.jsx                   # React entry point
 ```
 
 ## Prerequisites
@@ -126,6 +170,13 @@ Fetch conversation history
 - Mobile-friendly layout
 - Adapts to all screen sizes
 - Touch-friendly buttons and inputs
+
+### Authentication & Upgrade
+
+- Sign In and Sign Up modal UI are implemented
+- Pricing modal with Plus/Max plans is implemented
+- Google / Email auth logic: Coming soon
+- Billing and upgrade payment flow: Coming soon
 
 ## Technologies Used
 
