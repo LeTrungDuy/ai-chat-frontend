@@ -20,7 +20,6 @@ const TopBar = () => {
           onClick={() => setIsVisible(false)}
           className="text-slate-400 hover:text-slate-600"
           aria-label="Close top bar"
-          title="Close"
         >
           <Cross2Icon className="h-5 w-5" />
         </button>

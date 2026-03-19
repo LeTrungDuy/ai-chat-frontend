@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import TopBar from './chat-input/TopBar';
-import SelectedFilesList from './chat-input/SelectedFilesList';
+import ListAttachedFile from './chat-input/ListAttachedFile';
 import PromptTextarea from './chat-input/PromptTextarea';
 import UploadButton from './chat-input/UploadButton';
 import GenerateButton from './chat-input/GenerateButton';
-import { formatFileSize, getFileKey } from '../utils/formatters';
+import { formatFileSize, getFileKey } from '../utils/tools';
 import { MAX_UPLOAD_FILE_SIZE_BYTES, MAX_UPLOAD_FILE_SIZE_MB } from '../utils/constants';
 
 const ChatInput = ({ onSendMessage, disabled, hasMessages = false }) => {
@@ -93,8 +93,8 @@ const ChatInput = ({ onSendMessage, disabled, hasMessages = false }) => {
   return (
     <div className="flex flex-col py-6 border-t border-gray-200">
       <TopBar />
-      <SelectedFilesList files={selectedFiles} onRemoveFile={handleRemoveFile} />
       <div className="rounded-[14px] bg-white flex flex-col transition-colors duration-300 ease-in-out shadow-none p-3 pb-1.5 border border-[var(--color-input-border)]">
+        <ListAttachedFile files={selectedFiles} onRemoveFile={handleRemoveFile} />
         <PromptTextarea
           textareaRef={textareaRef}
           value={input}

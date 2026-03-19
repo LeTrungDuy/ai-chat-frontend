@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { CheckIcon, CopyIcon } from '@radix-ui/react-icons';
 import MarkdownIt from 'markdown-it';
-import { formatFileSize } from '../utils/formatters';
+import { formatFileSize } from '../utils/tools';
 
 const md = new MarkdownIt({
   breaks: true,
@@ -75,7 +75,6 @@ const MessageItem = ({ role, content, attachments = [] }) => {
               type="button"
               onClick={handleCopy}
               className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 opacity-0 shadow-sm transition-all duration-200 ease-out hover:bg-gray-100 hover:text-gray-700 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 group-hover:opacity-100"
-              title={copied ? 'Copied' : 'Copy'}
               aria-label={copied ? 'Copied' : 'Copy message'}
             >
               {copied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}

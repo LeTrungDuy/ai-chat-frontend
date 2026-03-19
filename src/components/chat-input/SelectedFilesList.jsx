@@ -1,5 +1,5 @@
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { formatFileSize, getFileKey } from '../../utils/formatters';
+import { formatFileSize, getFileKey } from '../../utils/tools';
 
 const SelectedFilesList = ({ files, onRemoveFile }) => {
   if (!files.length) return null;
@@ -20,7 +20,6 @@ const SelectedFilesList = ({ files, onRemoveFile }) => {
             onClick={() => onRemoveFile(file)}
             className="rounded p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700"
             aria-label={`Remove ${file.name}`}
-            title={`Remove ${file.name}`}
           >
             <Cross2Icon className="h-3.5 w-3.5" />
           </button>

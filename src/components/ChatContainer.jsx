@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { useChat } from '../hooks/useChat';
 import ChatHeader from './ChatHeader';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
-import ConversationSidebar from './ConversationSidebar';
+import ChatSidebar from './sidebar/ChatSidebar';
+import ChatConversationActions from './chat/ChatConversationActions';
+import SignInModal from './modals/SignInModal';
+import SignUpModal from './modals/SignUpModal';
+import PricingModal from './modals/PricingModal';
 
 const ChatContainer = () => {
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
+
   const {
     messages,
     conversations,
@@ -20,19 +29,21 @@ const ChatContainer = () => {
 
   return (
     <div className="flex h-screen overflow-hidden bg-[var(--color-app-bg)]">
-      <ConversationSidebar
+      <ChatSidebar
         conversations={conversations}
         activeConversationId={conversationId}
         loading={loading}
         onSelectConversation={loadConversation}
         onDeleteConversation={removeConversation}
         onNewChat={clearConversation}
+        onSignIn={() => setIsSignInOpen(true)}
+        onUpgrade={() => setIsPricingOpen(true)}
       />
 
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         {/* Header */}
         <div className="px-4 md:px-8">
-          <ChatHeader />
+          <ChatHeader onSignUpClick={() => setIsSignUpOpen(true)} />
         </div>
 
         {/* Error Message */}
@@ -41,6 +52,8 @@ const ChatContainer = () => {
             <p className="text-red-800 text-sm font-medium">{error}</p>
           </div>
         )}
+
+        <ChatConversationActions hasMessages={messages.length > 0} onBack={clearConversation} />
 
         {/* Messages Container */}
         <div className="flex min-h-0 flex-1 flex-col max-w-2xl mx-auto w-full px-4 md:px-8">
@@ -56,6 +69,15 @@ const ChatContainer = () => {
           />
         </div>
       </div>
+
+      {/* Sign In Modal */}
+      <SignInModal isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
+
+      {/* Sign Up Modal */}
+      <SignUpModal isOpen={isSignUpOpen} onClose={() => setIsSignUpOpen(false)} />
+
+      {/* Pricing Modal */}
+      <PricingModal isOpen={isPricingOpen} onClose={() => setIsPricingOpen(false)} />
     </div>
   );
 };
